@@ -1,3 +1,5 @@
+import './ToDoListItem.scss'
+
 export const ToDoListItem = () => {
   return (
     <li className="todo-list-item__wrapper">
