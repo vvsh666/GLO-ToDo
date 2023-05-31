@@ -30,10 +30,14 @@ export const ToDoListPage = () => {
         }
     ]
 
+    const createNewToDo = (text: string) => {
+        console.log(text);
+    }
+
     return (
         <>
             <Header />
-            <Form />
+            <Form createNewToDo={createNewToDo} />
             <ToDoList todos={todos} />
         </>
     )
