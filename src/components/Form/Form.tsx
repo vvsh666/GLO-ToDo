@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Form.scss'
 
 export const Form = (props: { createNewToDo: Function }) => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState<string>('')
 
   const formSubmit = () => {
     if (text) {

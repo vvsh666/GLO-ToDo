@@ -1,5 +1,6 @@
 //import React from "react"
 
+import { useState } from "react"
 import { Form } from "../components/Form/Form"
 import { Header } from "../components/Header/Header"
 import { ToDoList } from "../components/ToDoList/ToDoList"
@@ -7,7 +8,7 @@ import { ToDo } from "../models/todo-item"
 
 export const ToDoListPage = () => {
 
-    const todos: ToDo[] = [
+    const [todos, setTodos] = useState<ToDo[]>([
         {
             id: 0,
             text: 'Первая задача',
@@ -28,10 +29,16 @@ export const ToDoListPage = () => {
             text: 'Четвертая задача',
             isDone: false
         }
-    ]
+    ])
 
     const createNewToDo = (text: string) => {
-        console.log(text);
+        const newToDo: ToDo = {
+            id: todos.length,
+            text: text,
+            isDone: false
+        }
+
+        setTodos([...todos, newToDo])
     }
 
     return (
