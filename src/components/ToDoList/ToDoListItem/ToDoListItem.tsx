@@ -7,7 +7,7 @@ export const ToDoListItem = (props: { toDoItem: ToDo }) => {
       <span>{props.toDoItem.text}</span>
       <div className="todo-list-item__buttons">
         <button className="btn-trash"></button>
-        <button className="btn-check"></button>
+        <button className={props.toDoItem.isDone ? 'btn-check' : 'btn-uncheck'}></button>
       </div>
     </li>
   )
