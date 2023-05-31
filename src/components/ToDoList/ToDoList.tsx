@@ -4,24 +4,52 @@ import { ToDoListItem } from "./ToDoListItem/ToDoListItem"
 
 export const ToDoList = () => {
 
-  const todo1: ToDo = {
-    id: 0,
-    text: 'Первая задача',
-    isDone: false
-  }
-  const todo2: ToDo = {
-    id: 1,
-    text: 'Вторая задача',
-    isDone: true
-  }
+  const todos: ToDo[] = [
+    {
+      id: 0,
+      text: 'Первая задача',
+      isDone: false
+    },
+    {
+      id: 1,
+      text: 'Вторая задача',
+      isDone: true
+    },
+    {
+      id: 2,
+      text: 'Третья задача',
+      isDone: true
+    },
+    {
+      id: 3,
+      text: 'Четвертая задача',
+      isDone: false
+    }
+  ]
 
   return (
     <div className="todo-container">
       <ul className="todo-list failed">
-        <ToDoListItem toDoItem={todo1} />
+        {
+          todos
+            .filter((item) => !item.isDone)
+            .map((item, idx) => {
+              return (
+                <ToDoListItem toDoItem={item} key={idx} />
+              )
+            })
+        }
       </ul>
       <ul className="todo-list completed">
-        <ToDoListItem toDoItem={todo2} />
+        {
+          todos
+            .filter((item) => item.isDone)
+            .map((item, idx) => {
+              return (
+                <ToDoListItem toDoItem={item} key={idx} />
+              )
+            })
+        }
       </ul>
     </div>
   )
