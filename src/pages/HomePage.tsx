@@ -1,7 +1,11 @@
 import { ListItem } from "../components/ListItem/ListItem"
 import { ToDo } from "../models/todo-item"
 
-export const HomePage = ({ todos }: { todos: ToDo[] }) => {
+interface ComponentProps {
+  todos: ToDo[]
+}
+
+export const HomePage = ({ todos }: ComponentProps) => {
   return (
     <div className="container">
       {

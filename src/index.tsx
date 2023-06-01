@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { Header } from './components/Header/Header';
 import { ToDo } from './models/todo-item';
 import { NotFound } from './pages/404';
+import { ItemDescription } from './pages/ItemDescription';
 
 const todos: ToDo[] = [
   {
@@ -41,6 +42,7 @@ root.render(
       <Header />
       <Routes>
         <Route path='/' element={<HomePage todos={todos} />}></Route>
+        <Route path='/list/:id' element={<ItemDescription todos={todos} />}></Route>
         <Route path='/todo' element={<ToDoListPage />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
