@@ -7,28 +7,7 @@ import { ToDo } from "../models/todo-item"
 
 export const ToDoListPage = () => {
 
-    const [todos, setTodos] = useState<ToDo[]>([
-        {
-            id: 0,
-            text: 'Первая задача',
-            isDone: false
-        },
-        {
-            id: 1,
-            text: 'Вторая задача',
-            isDone: true
-        },
-        {
-            id: 2,
-            text: 'Третья задача',
-            isDone: true
-        },
-        {
-            id: 3,
-            text: 'Четвертая задача',
-            isDone: false
-        }
-    ])
+    const [todos, setTodos] = useState<ToDo[]>([])
 
     const createNewToDo = (text: string) => {
         const newToDo: ToDo = {
