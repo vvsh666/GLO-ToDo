@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { Header } from './components/Header/Header';
 import { ToDo } from './models/todo-item';
+import { NotFound } from './pages/404';
 
 const todos: ToDo[] = [
   {
@@ -41,6 +42,7 @@ root.render(
       <Routes>
         <Route path='/' element={<HomePage todos={todos} />}></Route>
         <Route path='/todo' element={<ToDoListPage />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
